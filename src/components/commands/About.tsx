@@ -1,25 +1,27 @@
 import {
-  AboutWrapper,
-  HighlightAlt,
-  HighlightSpan,
+    AboutWrapper,
+    HighlightAlt,
+    HighlightSpan,
 } from "../styles/About.styled";
 
 const About: React.FC = () => {
-  return (
-    <AboutWrapper data-testid="about">
-      <p>
-        Hi, my name is <HighlightSpan>Sat Naing</HighlightSpan>!
-      </p>
-      <p>
-        I'm <HighlightAlt>a full-stack developer</HighlightAlt> based in Yangon,
-        Myanmar.
-      </p>
-      <p>
-        I am passionate about writing codes and <br />
-        developing web applications to solve real-life challenges.
-      </p>
-    </AboutWrapper>
-  );
+    return (
+        <AboutWrapper data-testid="about">
+            <p>
+                Hi, my name is <HighlightSpan>CX330</HighlightSpan>! You can
+                also call me Blake.
+            </p>
+            <p>
+                I'm <HighlightAlt>a security researcher</HighlightAlt> and{" "}
+                <HighlightAlt>hacker</HighlightAlt>.
+            </p>
+            <p>
+                I love to build and hack stuff. <br />
+                To see my projects please type "projects". <br />
+                To learn more about me with a GUI portfolio, please type "gui".
+            </p>
+        </AboutWrapper>
+    );
 };
 
 export default About;

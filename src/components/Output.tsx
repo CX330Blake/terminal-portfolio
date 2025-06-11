@@ -14,44 +14,46 @@ import Themes from "./commands/Themes";
 import { OutputContainer, UsageDiv } from "./styles/Output.styled";
 import { termContext } from "./Terminal";
 import { useContext } from "react";
+import Flag from "./commands/Flag";
 
 type Props = {
-  index: number;
-  cmd: string;
+    index: number;
+    cmd: string;
 };
 
 const Output: React.FC<Props> = ({ index, cmd }) => {
-  const { arg } = useContext(termContext);
+    const { arg } = useContext(termContext);
 
-  const specialCmds = ["projects", "socials", "themes", "echo"];
+    const specialCmds = ["projects", "socials", "themes", "echo"];
 
-  // return 'Usage: <cmd>' if command arg is not valid
-  // eg: about tt
-  if (!specialCmds.includes(cmd) && arg.length > 0)
-    return <UsageDiv data-testid="usage-output">Usage: {cmd}</UsageDiv>;
+    // return 'Usage: <cmd>' if command arg is not valid
+    // eg: about tt
+    if (!specialCmds.includes(cmd) && arg.length > 0)
+        return <UsageDiv data-testid="usage-output">Usage: {cmd}</UsageDiv>;
 
-  return (
-    <OutputContainer data-testid={index === 0 ? "latest-output" : null}>
-      {
-        {
-          about: <About />,
-          clear: <Clear />,
-          echo: <Echo />,
-          education: <Education />,
-          email: <Email />,
-          gui: <Gui />,
-          help: <Help />,
-          history: <History />,
-          projects: <Projects />,
-          pwd: <GeneralOutput>/home/satnaing</GeneralOutput>,
-          socials: <Socials />,
-          themes: <Themes />,
-          welcome: <Welcome />,
-          whoami: <GeneralOutput>visitor</GeneralOutput>,
-        }[cmd]
-      }
-    </OutputContainer>
-  );
+    return (
+        <OutputContainer data-testid={index === 0 ? "latest-output" : null}>
+            {
+                {
+                    about: <About />,
+                    clear: <Clear />,
+                    echo: <Echo />,
+                    education: <Education />,
+                    email: <Email />,
+                    gui: <Gui />,
+                    help: <Help />,
+                    history: <History />,
+                    projects: <Projects />,
+                    pwd: <GeneralOutput>/home/anonymous</GeneralOutput>,
+                    socials: <Socials />,
+                    themes: <Themes />,
+                    welcome: <Welcome />,
+                    whoami: <GeneralOutput>anonymous</GeneralOutput>,
+                    flag: <Flag />,
+                }[cmd]
+            }
+        </OutputContainer>
+    );
 };
 
 export default Output;
